@@ -1,6 +1,11 @@
-#include "bindpp.h"
 #include "libraw/libraw.h"
 #include <cstdlib>
+#include "bindpp.h"
+
+// hack. defined strerror in some perl headers?
+#ifdef strerror
+#undef strerror
+#endif
 
 XS(xs_new) {
     pl::Ctx c(1);
