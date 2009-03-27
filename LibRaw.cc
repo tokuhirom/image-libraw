@@ -164,7 +164,8 @@ XS(xs_destroy) {
     pl::Ctx c(1);
 
     pl::Pointer * p = c.arg(0)->as_pointer();
-    delete p->extract<LibRaw*>();
+    LibRaw * img = p->extract<LibRaw*>();
+    delete img;
     c.return_true();
 }
 

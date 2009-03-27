@@ -205,6 +205,9 @@ namespace pl {
          * this variable is just a reference.change the type
          */
         Reference* as_ref();
+        Scalar * clone () {
+            return Scalar::create(newSVsv(this->val));
+        }
 
         static Scalar *to_perl(const char* s) {
             return Scalar::create(newSVpv(s, strlen(s)));
