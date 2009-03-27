@@ -11,3 +11,6 @@ t_moose_t/
 .gdb_history
 Makefile.old
 *.bak
+*.ppm
+*.ppm
+*.jpg
