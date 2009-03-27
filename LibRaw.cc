@@ -10,9 +10,8 @@
 XS(xs_new) {
     pl::Ctx c(1);
 
-    pl::Str * klass = c.arg(0)->as_str();
     LibRaw * obj = new LibRaw();
-    pl::Pointer self((void*)obj, klass->to_c());
+    pl::Pointer self((void*)obj, "Image::LibRaw");
     c.ret(&self);
 }
 
