@@ -7,6 +7,10 @@
 #undef strerror
 #endif
 
+const int REQUIRED_MAJOR = 0;
+const int REQUIRED_MINOR = 7;
+const int REQUIRED_PATCH = 1;
+
 XS(xs_new) {
     pl::Ctx c(1);
 
@@ -171,6 +175,12 @@ XS(xs_destroy) {
 extern "C" {
     XS(boot_Image__LibRaw) {
         pl::BootstrapCtx bc;
+
+        if (! LIBRAW_CHECK_VERSION(REQUIRED_MAJOR, REQUIRED_MINOR, REQUIRED_PATCH)) {
+            pl::Carp::croak("Your libraw is too old.This module requires libraw>=%d.%d.%d.",
+                REQUIRED_MAJOR, REQUIRED_MINOR, REQUIRED_PATCH
+            );
+        }
 
         pl::Package b("Image::LibRaw");
         b.add_method("new",                   xs_new,                   __FILE__);
