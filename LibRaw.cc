@@ -182,24 +182,24 @@ extern "C" {
             );
         }
 
-        pl::Package b("Image::LibRaw");
-        b.add_method("new",                   xs_new,                   __FILE__);
-        b.add_method("open_file",             xs_open_file,             __FILE__);
-        b.add_method("get_idata",             xs_get_idata,             __FILE__);
-        b.add_method("get_sizes",             xs_get_sizes,             __FILE__);
-        b.add_method("get_other",             xs_get_other,             __FILE__);
-        b.add_method("unpack",                xs_unpack,                __FILE__);
-        b.add_method("unpack_thumb",          xs_unpack_thumb,          __FILE__);
-        b.add_method("dcraw_thumb_writer",    xs_dcraw_thumb_writer,    __FILE__);
-        b.add_method("dcraw_ppm_tiff_writer", xs_dcraw_ppm_tiff_writer, __FILE__);
-        b.add_method("recycle",               xs_recycle,               __FILE__);
-        b.add_method("version",               xs_version,               __FILE__);
-        b.add_method("version_number",        xs_version_number,        __FILE__);
-        b.add_method("camera_count",          xs_camera_count,          __FILE__);
-        b.add_method("camera_list",           xs_camera_list,           __FILE__);
-        b.add_method("rotate_fuji_raw",       xs_rotate_fuji_raw,       __FILE__);
-        b.add_method("strerror",              xs_strerror,              __FILE__);
-        b.add_method("DESTROY",               xs_destroy,               __FILE__);
+        pl::Package b("Image::LibRaw", __FILE__);
+        b.add_method("new",                   xs_new                 );
+        b.add_method("open_file",             xs_open_file           );
+        b.add_method("get_idata",             xs_get_idata           );
+        b.add_method("get_sizes",             xs_get_sizes           );
+        b.add_method("get_other",             xs_get_other           );
+        b.add_method("unpack",                xs_unpack              );
+        b.add_method("unpack_thumb",          xs_unpack_thumb        );
+        b.add_method("dcraw_thumb_writer",    xs_dcraw_thumb_writer  );
+        b.add_method("dcraw_ppm_tiff_writer", xs_dcraw_ppm_tiff_writer);
+        b.add_method("recycle",               xs_recycle             );
+        b.add_method("version",               xs_version             );
+        b.add_method("version_number",        xs_version_number      );
+        b.add_method("camera_count",          xs_camera_count        );
+        b.add_method("camera_list",           xs_camera_list         );
+        b.add_method("rotate_fuji_raw",       xs_rotate_fuji_raw     );
+        b.add_method("strerror",              xs_strerror            );
+        b.add_method("DESTROY",               xs_destroy             );
     }
 }
 
