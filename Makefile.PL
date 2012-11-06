@@ -23,5 +23,4 @@ build_requires 'Devel::CheckLib';
 build_requires 'YAML';
 auto_set_repository;
 use_test_base;
-auto_include;
 WriteAll;
