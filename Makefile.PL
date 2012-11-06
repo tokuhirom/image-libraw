@@ -18,7 +18,7 @@ clean_files qw{
 tests 't/*.t';
 author_tests 'xt';
 
-build_requires 'Test::More';
+build_requires 'Test::More' => 0.98;
 build_requires 'Devel::CheckLib';
 build_requires 'YAML';
 auto_set_repository;
